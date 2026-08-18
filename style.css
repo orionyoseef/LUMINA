@@ -1,0 +1,133 @@
+/* ==========================================================================
+   LUMINA Nature's Glow - Custom CSS
+   ========================================================================== */
+
+/* 1. Base Setup & Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FDFBF7;
+    /* Tekstur dot halus bergaya kertas kraft premium */
+    background-image: radial-gradient(rgba(139, 90, 43, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    overflow-x: hidden;
+}
+
+/* 2. Custom Scrollbar Tema Earthy */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FDFBF7;
+}
+::-webkit-scrollbar-thumb {
+    background: #6B8E23;
+    border-radius: 999px;
+    border: 2px solid #FDFBF7;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #556B2F;
+}
+
+/* 3. Animasi Float untuk Blur Blob Background Hero */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-18px) scale(1.04);
+    }
+}
+
+.blur-3xl {
+    animation: floatAnimation 7s ease-in-out infinite;
+}
+
+.blur-3xl:nth-child(2) {
+    animation-delay: -3.5s;
+}
+
+/* 4. Micro-Interactions: Card Hover Effects */
+.hover-lift {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -8px rgba(107, 142, 35, 0.15);
+    border-color: rgba(107, 142, 35, 0.4);
+}
+
+/* 5. Animasi Pulsa Halus untuk Tombol CTA WhatsApp */
+@keyframes ctaPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(107, 142, 35, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(107, 142, 35, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(107, 142, 35, 0);
+    }
+}
+
+.btn-pulse {
+    animation: ctaPulse 2.5s infinite;
+}
+
+/* 6. Class Utility untuk Scroll Reveal JavaScript */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay bertingkat untuk elemen berjejer */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* 7. Progress Bar Animation Reset State */
+.progress-bar-fill {
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 8. Styling Accordion (FAQ / Detail Extra) */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.accordion-item.active .accordion-content {
+    opacity: 1;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* 9. Floating Mobile Sticky CTA */
+.floating-mobile-cta {
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-mobile-cta.show {
+    transform: translateY(0);
+}
