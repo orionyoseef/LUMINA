@@ -124,7 +124,7 @@ function initMobileFloatingCTA() {
  */
 function initWhatsAppOrderBuilder() {
     const waButtons = document.querySelectorAll('a[href*="wa.me"]');
-    const phoneNumber = "6281234567890"; // Ganti dengan nomor WA asli
+    const phoneNumber = "6282310979388"; // Ganti dengan nomor WA asli
     const message = encodeURIComponent(
         "Halo Admin LUMINA Nature's Glow! ✨\n\nSaya berminat untuk memesan *Organic Powder Face Mask (50g)*.\nMohon info mengenai ketersediaan stok dan total ongkirnya ya. Terima kasih!"
     );
