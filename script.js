@@ -123,13 +123,13 @@ function initMobileFloatingCTA() {
  * 5. Helper Generator Pesan WhatsApp Otomatis
  */
 function initWhatsAppOrderBuilder() {
-    const waButtons = document.querySelectorAll('a[href*="wa.me"]');
-    const phoneNumber = "6282310979388"; // Ganti dengan nomor WA asli
+    const waButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    const phoneNumber = "6282310979388"; // Format internasional tanpa angka 0
     const message = encodeURIComponent(
-        "Halo Admin LUMINA Nature's Glow! ✨\n\nSaya berminat untuk memesan *Organic Powder Face Mask (50g)*.\nMohon info mengenai ketersediaan stok dan total ongkirnya ya. Terima kasih!"
+        "Halo Admin LUMINA Nature's Glow! ✨\n\nSaya berminat untuk memesan Organic Powder Face Mask (50g).\nMohon info mengenai ketersediaan stok dan total ongkirnya ya. Terima kasih!"
     );
 
     waButtons.forEach(btn => {
-        btn.setAttribute('href', `https://wa.me/${phoneNumber}?text=${message}`);
+        btn.setAttribute('href', `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`);
     });
 }
